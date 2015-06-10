@@ -43,7 +43,7 @@ $('#slider2').slider({
 });
 $('#slider2').on('slide', function (slideEvt) {
 
-$('#slider2val').text(boidWheights.alginment);
+$('#slider2val').text(boidWeights.alginment);
     $('#slider2val').text(slideEvt.value);
     boidWeights.alginment = slideEvt.value;
 });
@@ -65,7 +65,7 @@ $('#slider4').slider({
     min: 0,
     max: 20,
     step: 0.1,
-    value: boidheights.obstacle
+    value: boidWeights.obstacle
 });
 $('#slider4val').text(boidWeights.obstacle);
 
