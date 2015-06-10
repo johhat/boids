@@ -1,0 +1,107 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reynolds Boids JS Canvas implementation</title>
+    <meta name="description" content="Yet another implementation of Reynolds boids using java script canvas api.">
+    
+    <!--Overkill to use bootstrap, but meh..-->
+    <link href="ui-components/bootstrap.min.css" rel="stylesheet" />
+    <link href="ui-components/style.css" rel="stylesheet" />
+    <link href="ui-components/bootstrap-slider.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Boids<small> <a href="#">go to repository</a></small></h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-9" id="canvasContainer">
+                <canvas id="boidsCanvas" width="1250" height="750"></canvas>
+            </div>
+
+            <div class="col-md-3">
+
+                <h4>Execution and rendering</h4>
+
+                <button class="btn btn-default" onclick="animation.start()">Start</button>
+                <button class="btn btn-default" onclick="animation.stop()">Stop</button>
+                <button class="btn btn-default" onclick="animation.reset()">Reset</button>
+
+                <br />
+                <br />
+                <label>Initial number of boids:</label><br />
+                <input id="numBoidsSlider" /><span class="badge" id="numBoidsVal"></span>
+                <br />
+                <br />
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" onclick="animation.toggleViewfieldRendering(this)">
+                        Render viewfield
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" onclick="animation.printFps=this.checked" checked>
+                        Show fps
+                    </label>
+                </div>
+
+                <h4>Obstacles</h4>
+                <div class="btn-group-vertical">
+                    <button class="btn btn-default" onclick="animation.addObstacle()">Add obstacle</button>
+                    <button class="btn btn-default" onclick="animation.removeObstacles()">Remove obstacles</button>
+                </div>
+
+                <h4>Predators</h4>
+                <div class="btn-group-vertical">
+                    <button class="btn btn-default" onclick="animation.addPredator()">Add predator</button>
+                    <button class="btn btn-default" onclick="animation.removePredators()">Remove predator</button>
+                </div>
+
+                <h4>Wheights</h4>
+                <label>Separation:</label><br />
+                <input id="slider1" /><span class="badge" id="slider1val"></span>
+                <br />
+                <br />
+
+                <label>Alignment:</label><br />
+                <input id="slider2" /><span class="badge" id="slider2val"></span>
+                <br />
+                <br />
+
+                <label>Cohesion:</label><br />
+                <input id="slider3" /><span class="badge" id="slider3val"></span>
+                <br />
+                <br />
+
+                <label>Obstacle:</label><br />
+                <input id="slider4" /><span class="badge" id="slider4val"></span>
+                <br />
+                <br />
+
+                <label>Predator:</label><br />
+                <input id="slider5" /><span class="badge" id="slider5val"></span>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+    
+    <script src="ui-components/jQuery.js"></script>
+    <script src="ui-components/bootstrap-slider.js"></script>
+    <script src="utilities.js"></script>
+    <script src="Boid.js"></script>
+    <script src="Obstacle.js"></script>
+    <script src="animation.js"></script>
+    <script src="ui-components/ui.js"></script>
+</body>
+</html>
